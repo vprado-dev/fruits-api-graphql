@@ -7,13 +7,14 @@ import morgan from "morgan";
 import { notFound } from "./middlewares/notFound";
 import { exception } from "./middlewares/exception";
 import openapi from "@ev-fns/openapi";
+import { apollo } from "./apollo";
 
 const app = express();
-
 app.use(cors());
 app.use(json());
 app.use(morgan("dev"));
 app.use(openapi());
+apollo.applyMiddleware({ app });
 app.use(openapi({ apiName: process.env.API_NAME }));
 
 const routes = readdirSync(join(__dirname, "routes"));
