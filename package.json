@@ -5,9 +5,7 @@
   "author": "Vinicius Prado <vinicavagna@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/cors": "^2.8.12",
     "@types/dotenv-safe": "^8.1.2",
-    "@types/express": "^4.17.13",
     "@types/node": "^16.4.3",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
@@ -22,7 +20,6 @@
   "dependencies": {
     "@ev-fns/auth": "^1.0.1",
     "apollo-server": "^3.0.2",
-    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "dotenv-safe": "^8.2.0",
     "graphql": "^15.5.1",
