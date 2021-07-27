@@ -1,12 +1,12 @@
-import { gql } from "apollo-server-core";
+import { gql } from "apollo-server";
 
 export const typeDefs = gql`
-  extend type Query {
+  type Query {
     fruits: [Fruit]
     fruit(id: ID!): Fruit
   }
 
-  extend type Mutation {
+  type Mutation {
     createFruit(fruit: FruitInput): Fruit
     updateFruit(id: String, fruit: FruitInput): Fruit
     deleteFruit(id: String): Fruit

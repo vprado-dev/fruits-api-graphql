@@ -1,4 +1,4 @@
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer } from "apollo-server";
 import { DocumentNode } from "graphql";
 import { readdirSync } from "fs";
 import { join } from "path";
@@ -16,4 +16,7 @@ for (const file of readdirSync(join(__dirname, "resolvers"))) {
   resolvers.push(require(join(__dirname, "resolvers", file)).resolvers);
 }
 
-export const apollo = new ApolloServer({ typeDefs, resolvers });
+export const apollo = new ApolloServer({
+  typeDefs,
+  resolvers,
+});

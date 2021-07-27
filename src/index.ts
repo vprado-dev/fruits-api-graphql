@@ -1,16 +1,16 @@
 import dotenv from "dotenv-safe";
-import { apollo } from "./apollo";
 
 dotenv.config();
 
-import app from "./app";
+import { apollo } from "./apollo";
 
 const PORT = process.env.PORT || 3000;
 
 (async () => {
-  await apollo.start();
-  app.listen(PORT, () =>
-    console.info(`🟢 Listening at http://localhost:${PORT}`),
+  apollo.listen(PORT, () =>
+    console.info(
+      `🟢 Listening at http://localhost:${PORT}${apollo.graphqlPath}`,
+    ),
   );
 })().catch((err) => {
   console.log(err);
