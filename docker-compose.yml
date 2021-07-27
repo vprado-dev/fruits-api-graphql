@@ -7,3 +7,12 @@ services:
     ports:
       - $PORT:$PORT
     restart: always
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - $DB_PORT:27017
